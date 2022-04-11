@@ -1,0 +1,72 @@
+<div class="progress-loader" *ngIf="loader"><div class="loader"></div></div>
+
+<section class="contact-us">
+    <div class="container">
+        <div class="main-section">
+            <div class="main-title">Get In Touch With Us</div>
+            <div class="description">
+                Together let's fight climate change and make our planet a better place for future generations. We focus on accomplishing this by bringing awareness around the issues and giving quick actions that everyone can do to reduce the impact that we do to this beautiful planet.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-container">
+    <div class="container bg-white">
+        <div fxLayout="row wrap">
+            <div fxFlex="70" fxFlex.xs="100" class="card bg-white">
+                <div class="title">Send us a message</div>
+                <div fxLayout="row wrap">
+                    <form  fxLayout="row wrap" [formGroup]="contactForm">
+                    <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
+                        <mat-label>Full Name*</mat-label>
+                        <input matInput placeholder="Full Name" formControlName="full_name" autocomplete="off">
+                        <mat-error *ngIf="contactForm.get('full_name').invalid">Please enter valid full name</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
+                        <mat-label>Phone Number*</mat-label>
+                        <input matInput placeholder="Phone Number" formControlName="phone" autocomplete="off">
+                        <mat-error *ngIf="contactForm.get('phone').invalid">Please enter valid phone number</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
+                        <mat-label>Email Address*</mat-label>
+                        <input matInput placeholder="Email Address" formControlName="email" autocomplete="off">
+                        <mat-error *ngIf="contactForm.get('email').invalid">Please enter valid email address</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
+                        <mat-label>Subject</mat-label>
+                        <input matInput placeholder="Subject" formControlName="subject" autocomplete="off">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.xs="100">
+                        <mat-label>Message</mat-label>
+                        <textarea matInput placeholder="Message" formControlName="message" autocomplete="off"></textarea>
+                    </mat-form-field>
+
+                    <div class="action-btn" fxFlex="100">
+                        <button mat-raised-button class="filled-green"  (click)="onSubmit()"> 
+                            Submit
+                      </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            <div fxFlex="30" fxFlex.xs="100" class="card bg-green">
+                <div class="title text-white">Send us a message</div>
+                <div class="contact-info useful-links">
+                    <ul>
+                        <li><i class="fa-solid fa-location-pin"></i>2750 Peachtree Ind Blvd, Suite F, Duluth,GA - 30097</li>
+                        <li><i class="fa-solid fa-phone"></i> (952) 393 2464</li>
+                        <li><i class="fa-solid fa-envelope"></i> rightnow@uturngreen.com</li>
+                    </ul>
+                    <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.85515196605!2d-84.14704208441808!3d34.021928826773646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f598870da9f739%3A0x5d9b87ebe9afa88a!2s2750%20Peachtree%20Industrial%20Blvd%20f%2C%20Duluth%2C%20GA%2030097%2C%20USA!5e0!3m2!1sen!2sin!4v1645629037041!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,190 @@
+@import "variables";
+.main-container {
+    padding: 150px 0;
+    @media screen and (max-width: 568px) {
+        padding: 80px 0;
+    }
+    .container {
+        .main-section {
+            color: $white;
+            text-align: center;
+            max-width: 800px;
+            margin: 0px auto;
+            .main-title {
+                font-size: 30px;
+                line-height: 1.2;
+                font-weight: $font-weight-bold;
+            }
+            .description {
+                padding-top: 25px;
+                font-size: $font-size-4;
+            }
+            .actions {
+                button {
+                    margin: 20px 5px;
+                }
+            }
+        }
+    }
+    &.bg-1 {
+        background-image: url(../../../assets/img/main-bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.feature-container {
+    position: relative;
+    top: -100px;
+    .card {
+        padding: 30px;
+        min-height: 270px;
+        margin: 10px;
+        border-radius: 5px;
+        text-align: center;
+        @media screen and (max-width: 568px) {
+            min-height: auto;
+        }
+        div {
+            font-size: 20px;
+            font-weight: $font-weight-bold;
+            padding-top: 30px;
+            color: $black;
+        }
+        &.bg-yellow {
+            background-color: $lightyellow;
+        }
+        &.bg-blue {
+            background-color: $lightblue;
+        }
+        &.bg-red {
+            background-color: $lightred;
+        }
+        &.bg-green {
+            background-color: $lightgreen;
+        }
+    }
+    .inner-section {
+        max-width: 800px;
+        margin: 0px auto;
+        text-align: center;
+        padding-top: 50px;
+        .main-title {
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: $font-weight-bold;
+            color: $black;
+        }
+        .description {
+            padding-top: 25px;
+            font-size: $font-size-4;
+        }
+    }
+}
+
+.about-us {
+    background-color: $lightwhite;
+    padding: 50px 0;
+    @media screen and (max-width: 568px) {
+        padding: 40px 0;
+    }
+    .main-title {
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: $font-weight-bold;
+        color: $white;
+    }
+    .description {
+        padding-top: 25px;
+        font-size: $font-size-4;
+        color: $lightwhite;
+    }
+    ul {
+        li {
+            padding-bottom: 5px;
+            color: $lightwhite;
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+    img.about-img {
+        max-width: 100%;
+        width: 400px;
+        // box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+        border-radius: 5px;
+    }
+    .padding-10 {
+        padding: 10px;
+    }
+    &.bg-2 {
+        background-image: url(../../../assets/img/about-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.about-vision-and-mission {
+    padding: 60px 0;
+    @media screen and (max-width: 568px) {
+        padding: 40px 0;
+    }
+    .our-mission,
+    .our-vision {
+        width: 100%;
+        mat-card {
+            border-top: 5px solid;
+            border-color: $primary;
+            padding: 10px 25px;
+            box-shadow: none;
+            box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+            text-align: center;
+            min-height: 250px;
+             @media screen and (max-width: 568px) {
+                min-height: auto;
+            }
+            div {
+                font-size: $font-size-6;
+                color: $black;
+                font-weight: bold;
+                font-weight: 18px;
+            }
+            img {
+                width: 75px;
+                margin: 0px auto;
+                padding: 20px;
+            }
+        }
+    }
+    .our-mission {
+        mat-card {
+            margin-right: 5px;
+        }
+    }
+
+    .our-vision {
+        mat-card {
+            margin-left: 5px;
+        }
+    }
+}
+.call-to-action {
+    background-color: $primary;
+    padding: 20px 0;
+    .title {
+        padding-top: 10px;
+        font-size: 25px;
+        line-height: 1.2;
+        font-weight: $font-weight-bold;
+        color: $white;
+    }
+    .float-right {
+        float: right;
+        @media screen and (max-width: 568px) {
+            float: left;
+            margin-top: 10px;
+        }
+    }
+}

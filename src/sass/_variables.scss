@@ -1,0 +1,41 @@
+@import "./colors";
+@import "./font-size";
+@import "./spacing";
+
+.text-white {
+  color: $white !important;
+}
+
+
+.btn {
+  min-width: 150px;
+  font-size: $font-size-3;
+  height: 45px;
+}
+
+.filled-white {
+  @extend .btn;
+  background-color: $white;
+  color: $primary;
+  border: 1px solid $white;
+}
+
+.outline-white {
+  @extend .btn;
+  background-color: transparent;
+  color: $primary;
+  border: 1px solid $white;
+}
+.filled-green {
+  @extend .btn;
+  background-color: $primary;
+  color: $white;
+  border: 1px solid $primary;
+}
+
+.outline-danger {
+    @extend .btn;
+    background-color: transparent;
+    color: $danger;
+    border: 1px solid transparent;
+}

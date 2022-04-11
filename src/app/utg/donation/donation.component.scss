@@ -1,0 +1,95 @@
+@import "variables";
+
+.main-card {
+    background-image: url(../../../assets/img/main-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    min-height: 100px;
+    .container {
+        .main-section {
+            color: $white;
+            text-align: center;
+            margin: 0px auto;
+            padding-left: 10px;
+            .main-title {
+                font-size: 30px;
+                line-height: 1.2;
+                font-weight: $font-weight-bold;
+            }
+            .description {
+                padding-top: 25px;
+                font-size: $font-size-4;
+                max-width: 1000px;
+                margin: 0px auto;
+            }
+            .actions {
+                button {
+                    margin: 20px 5px;
+                }
+            }
+        }
+    }
+}
+
+.contact-container {
+    position: relative;
+    top: -80px;
+    .container.bg-white {
+        padding: 20px;
+        background-color: $white;
+        box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+        .sub-title {
+            font-weight: bold;
+            padding-top: 20px;
+        }
+        mat-radio-group {
+            margin-top: 10px;
+            display: block;
+            mat-radio-button {
+                margin-right: 20px;
+            }
+        }
+        mat-form-field {
+            padding: 10px 10px 0 0;
+        }
+        .action-btn {
+            text-align: center;
+        }
+        &.success {
+            text-align: center;
+            .title {
+                font-weight: bold;
+                font-size: $font-size-8;
+                text-transform: uppercase;
+                padding-bottom: 20px;
+                color: $primary;
+            }
+            img {
+                width: 60px;
+                height: 60px;
+                margin: 0px auto;
+            }
+        }
+    }
+}
+
+.call-to-action {
+    background-color: $primary;
+    padding: 20px 0;
+    .title {
+        padding-top: 10px;
+        font-size: 25px;
+        line-height: 1.2;
+        font-weight: $font-weight-bold;
+        color: $white;
+    }
+    .float-right {
+        float: right;
+        @media screen and (max-width: 568px) {
+            float: left;
+            margin-top: 10px;
+        }
+    }
+}

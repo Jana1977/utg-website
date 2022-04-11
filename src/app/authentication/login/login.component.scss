@@ -1,0 +1,97 @@
+@import "variables";
+
+.login-form {
+    background-image: url("../../../assets/dark-login-bg.svg");
+   background-repeat: repeat;
+    background-size: auto;
+    background-position: bottom;
+    padding: 50px 0;
+    min-height: calc(100vh - 100px);
+    .main-container {
+        max-width: 400px;
+        margin: 0px auto;
+        padding: 20px;
+        border-radius: 10px;
+        min-height: 750px;
+        background-color: $white;
+        background-image: url("../../../assets/Rectangle\ 5.svg");
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+        &::after {
+            content: "";
+            display: inline-block;
+            background-image: url("../../../assets/Rectangle\ 5.svg");
+            background-repeat: repeat-x;
+            box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+        }
+        div {
+            text-align: center;
+            img {
+                text-align: center;
+                max-width: 80%;
+                padding-top: 30px;
+                margin: 0px auto;
+            }
+            .title {
+                font-size: $font-size-6;
+                letter-spacing: 5px;
+                padding-top: 50px;
+                text-transform: uppercase;
+            }
+        }
+        div.login-card {
+            box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+            max-width: 90%;
+            margin: 0px auto;
+            margin-top: 40px;
+            border-radius: 5px;
+            padding: 30px;
+            background-color: $white;
+        }
+    }
+}
+
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    min-height: 50px;
+}
+
+.icon {
+    padding: 16px 0px 0 10px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background: #f2f2f2;
+    color: #b5b5b5;
+    min-width: 30px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background: #f2f2f2;
+    border: none;
+}
+
+.input-field:focus {
+    background: #f2f2f2;
+}
+.outline-success {
+    width: 100%;
+    margin: 0px auto;
+    padding: 15px;
+    border: 1px solid $primary;
+    color: $primary;
+    background-color: $white;
+    border-radius: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+}

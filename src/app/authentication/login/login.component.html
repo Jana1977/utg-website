@@ -1,0 +1,24 @@
+<div class="progress-loader" *ngIf="loader"><div class="loader"></div></div>
+<div class="login-form">
+    <div class="main-container">
+        <div class="text-center">
+            <img src="../../../assets/utg-group-logo.svg" alt="UTG Logo">
+            <div class="title">log in Account</div>
+        </div>
+        <div class="login-card">
+            <form [formGroup]="loginForm">
+                <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input class="input-field" type="text" formControlName="email" placeholder="Email" name="Email">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-lock icon"></i>
+                    <input class="input-field" type="password" formControlName="password" placeholder="Password" name="Password">
+                </div>
+                <div class="actions">
+                    <button class="outline-success" type="submit" (click)="login()">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

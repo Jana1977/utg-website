@@ -1,0 +1,21 @@
+@import "variables";
+
+.welcome-header {
+    background-color: $primary;
+    .mat-toolbar {
+        height: 40px;
+        background-color: $primary;
+        color: #ffffff;
+        font-size: 14px;
+        @media screen and (max-width: 720px) { 
+            height: auto;
+            text-align: center;
+            }
+        .text-right {
+           text-align: right;
+           @media screen and (max-width: 720px) { 
+            text-align: center;
+            }
+        }
+    }
+}

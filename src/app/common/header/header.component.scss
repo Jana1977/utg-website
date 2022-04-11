@@ -1,0 +1,70 @@
+@import "variables";
+
+.header {
+    background-color: $white;
+    box-shadow: $header-shadow;
+    mat-toolbar {
+        background-color: $white;
+        .logo {
+            max-width: 250px;
+            img {
+                width: 100%;
+                height: 60px;
+                padding: 8px 0 0 0;
+            }
+        }
+        button {
+            margin: 0 5px;
+        }
+    }
+    .router-link-active {
+        color: $primary;
+    }
+}
+.hide-mobile {
+    display: block;
+    @media screen and (max-width: 720px) { 
+    display: none;
+    }
+}
+.show-mobile {
+    display: none;
+    @media screen and (max-width: 720px) { 
+    display: block;
+    }
+}
+
+.sidenav {
+    position: fixed;
+    width: 270px;
+    left: 0;
+    height: 100vh;
+    background-color: $white;
+    z-index: 9999;
+    overflow: hidden;
+    button {
+        width: 100%;
+        color: $black;
+        padding: 10px;
+        background-color: $lightwhite;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+    // &::before {
+    //     content: '';
+    //     background-color: #0000006b;
+    //     width: 100%;
+    //     position: fixed;
+    //     height: 100vh;
+    //     left: 270px;
+    //     cursor: alias;
+    // }
+}
+.backdrop {
+    background-color: #000000c7;
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    cursor: alias;
+    z-index: 999;
+}

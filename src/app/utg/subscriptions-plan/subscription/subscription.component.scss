@@ -1,0 +1,127 @@
+@import "variables";
+
+.main-card {
+    background-image: url(../../../../assets/img/main-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    .container {
+        .main-section {
+            color: $white;
+            text-align: center;
+            margin: 0px auto;
+            padding-left: 10px;
+            .main-title {
+                font-size: 30px;
+                line-height: 1.2;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+}
+
+.main-section {
+    mat-card {
+        margin: 25px 0px;
+        // box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+        // background: linear-gradient(65deg, #55D400, #368501);
+        box-shadow: none;
+        background-color: #E5E5E5;
+        border: 3px solid #cccccc;
+        mat-card-content {
+            ul {
+                list-style: none;
+                padding-left: 15px;
+                li {
+                    font-size: $font-size-4;
+                    i {
+                        color: $primary;
+                        padding-right: 5px;
+                    }
+                }
+            }
+            .amount {
+                font-weight: bold;
+                width: 100px;
+                height: 100px;
+                float: right;top: -13px;
+                right: 25px;
+                position: relative;
+                text-align: center;
+                vertical-align: middle;
+                background-image: url(../../../../assets/img/Pricing.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                div {
+                   padding-top: 30px;
+                   font-size: $font-size-10;
+                }
+            }
+        }
+    }
+    .main-title {
+        font-size: $font-size-5;
+        font-weight: bold;
+    }
+    .actions {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .details {
+        margin: 10px 0 10px 0;
+        background-color: $white;
+        padding: 5px;
+        box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+        border: 1px solid rgb(223, 223, 223);
+        border-radius: 5px;
+        div {
+            display: inline-block;
+            img {
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+            }
+            div {
+                padding-left: 10px;
+                position: relative;
+                top: -12px;
+                p{
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+        &.no-data {
+            text-align: center;
+            padding: 25px 0;
+        }
+    }
+    .pay-success {
+        background-color: $white;
+        box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+        border: 1px solid rgb(223, 223, 223);
+        border-radius: 5px;
+        text-align: center;
+        margin: 20px 0;
+        padding: 25px 0;
+    }
+}
+.active-price{
+    border: 3px solid $primary !important;
+    position: relative;
+    &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../assets/selected.svg);
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        right: 0;
+        bottom: -1px;
+        position: absolute;
+        display: inline-block;
+    }
+}

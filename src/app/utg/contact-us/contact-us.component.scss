@@ -1,0 +1,89 @@
+@import "variables";
+
+.contact-us {
+    background-image: url(../../../assets/img/main-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    min-height: 250px;
+    .container {
+        .main-section {
+            color: $white;
+            text-align: left;
+            margin: 0px auto;
+            padding-left: 10px;
+            .main-title {
+                font-size: 30px;
+                line-height: 1.2;
+                font-weight: $font-weight-bold;
+            }
+            .description {
+                padding-top: 25px;
+                font-size: $font-size-4;
+                max-width: 1000px;
+            }
+            .actions {
+                button {
+                    margin: 20px 5px;
+                }
+            }
+        }
+    }
+}
+
+.contact-container {
+    position: relative;
+    top: -100px;
+    .container.bg-white {
+        background-color: $white;
+        box-shadow: 0 10px 16px 0 rgb(0 0 0 / 8%), 0 6px 20px 0 rgb(0 0 0 / 7%) !important;
+
+        .card {
+            min-height: 200px;
+            padding: 10px;
+            text-align: left;
+            div.title {
+                font-size: 20px;
+                font-weight: $font-weight-bold;
+                color: $black;
+                padding: 20px 0 20px 10px;
+            }
+            mat-form-field {
+                padding: 10px;
+            }
+            &.bg-green {
+                background-color: $primary;
+            }
+
+        .contact-info {
+            padding: 20px;
+            padding-top: 0;
+            ul {
+                padding-left: 15px;
+                margin-left: 0;
+                li {
+                    color: $lightwhite;
+                    list-style-type: none;
+                    padding-bottom: 12px;
+                    display: flex;
+                    &:hover {
+                        color: $white;
+                    }
+                    a {
+                        cursor: pointer;
+                    }
+                    i {
+                        color: $darkgreen;
+                        padding-right: 10px;
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+        .action-btn {
+            text-align: center;
+        }
+        }
+    }
+}

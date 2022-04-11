@@ -1,0 +1,33 @@
+<div class="header">
+  <mat-toolbar class="container">
+    <div class="logo">
+      <a routerLink="/home"><img src="../../../assets/UTG- Logo.svg" alt="UTG-logo"></a>
+    </div>
+    <!-- This fills the remaining space of the current row -->
+    <span class="custom-spacer"></span>
+
+    <div class="hide-mobile">
+      <button mat-button routerLink="/home" routerLinkActive="router-link-active">Home</button>
+      <button mat-button routerLink="/about-us" routerLinkActive="router-link-active">About UTG</button>
+      <button mat-button routerLink="/donation" routerLinkActive="router-link-active">Donation</button>
+      <button mat-button routerLink="/features" routerLinkActive="router-link-active">Features</button>
+      <button mat-button routerLink="/contact-us" routerLinkActive="router-link-active">Contact Us</button>
+    </div>
+    <div class="show-mobile">
+      <button mat-icon-button color="accent" aria-label="Example icon-button with a heart icon" (click)="openMenu()">
+        <mat-icon>list</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div class="sidenav" *ngIf="sideMenu">
+  <button mat-button routerLink="/home" routerLinkActive="router-link-active" (click)="openMenu()">Home</button>
+  <button mat-button routerLink="/about-us" routerLinkActive="router-link-active" (click)="openMenu()">About
+    UTG</button>
+  <button mat-button routerLink="/donation" routerLinkActive="router-link-active" (click)="openMenu()">Donation</button>
+  <button mat-button routerLink="/features" routerLinkActive="router-link-active" (click)="openMenu()">Features</button>
+  <button mat-button routerLink="/contact-us" routerLinkActive="router-link-active" (click)="openMenu()">Contact
+    Us</button>
+</div>
+<div class="backdrop" *ngIf="sideMenu" (click)="hideMenu()"></div>

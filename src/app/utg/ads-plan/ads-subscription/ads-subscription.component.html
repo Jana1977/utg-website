@@ -1,0 +1,87 @@
+<div class="progress-loader" *ngIf="loader"><div class="loader"></div></div>
+<section class="main-card">
+    <div class="container">
+        <div class="main-section">
+            <div class="main-title">Buy Ads Package</div>
+        </div>
+    </div>
+</section>
+
+<section class="main-section">
+    <div class="container-half">
+        <ng-container  *ngIf="!successMessage">
+            <ng-container *ngFor="let priceid of adsPackage.data">
+                <mat-card *ngIf="priceID === priceid.id">
+                    <mat-card-header>
+                        <mat-card-title class="m-b-0"> {{priceid.metadata.NAMETOUSE}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div fxLayout="row wrap">
+                            <div fxFlex="50" fxFlex.sm="50">
+                                <ul>
+                                    <li *ngIf="priceid.metadata.DESC_1"><i
+                                            class="fa-solid fa-circle-check"></i>{{priceid.metadata.DESC_1}}</li>
+                                    <li *ngIf="priceid.metadata.DESC_2"><i
+                                            class="fa-solid fa-circle-check"></i>{{priceid.metadata.DESC_2}}</li>
+                                    <li *ngIf="priceid.metadata.DESC_3"><i
+                                            class="fa-solid fa-circle-check"></i>{{priceid.metadata.DESC_3}}</li>
+                                    <li *ngIf="priceid.metadata.DESC_4"><i
+                                            class="fa-solid fa-circle-check"></i>{{priceid.metadata.DESC_4}}</li>
+                                    <li *ngIf="priceid.metadata.DESC_5"><i
+                                            class="fa-solid fa-circle-check"></i>{{priceid.metadata.DESC_5}}</li>
+                                </ul>
+                            </div>
+                            <div fxFlex="50" fxFlex.sm="50">
+                                <div class="amount">
+                                    <div>${{priceid.unit_amount / 100}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </ng-container>
+        </ng-container>
+
+        <div class="m-t-20 m-b-20" *ngIf="!successMessage">
+            <div class="main-title m-t-30">Primary Payment Option</div>
+            <div class="details" *ngIf="primaryAccount">
+                <div>
+                    <ng-container *ngFor="let primaryAcc of bankaccounts.bank">
+                        <img src="../../../assets/img/bank.svg" alt="" *ngIf="primaryAccount === primaryAcc.id">
+                        <div *ngIf="primaryAccount === primaryAcc.id">
+                            <div>
+                                <p>{{primaryAcc.bank_name}}</p>
+                                <p>XXXX XXXX XXXX {{primaryAcc.last4}}</p>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngFor="let primarycardAcc of bankaccounts.card">
+                        <img src="../../../assets/img/card.svg" alt="" *ngIf="primaryAccount === primarycardAcc.id">
+                        <div *ngIf="primaryAccount === primarycardAcc.id">
+                            <div>
+                                <p>primarycardAcc.bank_name</p>
+                                <p>XXXX XXXX XXXX {{primarycardAcc.last4}}</p>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div  *ngIf="!primaryAccount" class="details no-data">
+               No Primary Payment Option Available
+            </div>
+
+            <div class="terms m-t-30">By continuing you agree to <a href="www.uturngreen.com/terms-and-conditions"
+                    target="_blank">Terms and conditions!</a></div>
+            <div class="actions">
+                <button mat-raised-button class="filled-green" type="submit"
+                    (click)="submitbuyAdpackage()">Buy Package</button>
+            </div>
+        </div>
+
+        <div class="pay-success" *ngIf="successMessage">
+                <img src="../../../assets/img/success-mark.svg" alt="">
+                <div class="title">Congratulations!!!</div>
+                <div class="title">Ad Package Bought Successfully</div>
+        </div>
+    </div>
+</section>

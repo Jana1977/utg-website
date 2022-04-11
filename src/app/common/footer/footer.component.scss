@@ -1,0 +1,79 @@
+@import "variables";
+
+.footer {
+    background-color: $black;
+    padding: 50px 0;
+    @media screen and (max-width: 568px) {
+        padding: 20px 0;
+    }
+    .container.border-bottom {
+        border-bottom: 2px solid $lightwhite;
+        .first-column {
+            padding: 20px;
+            @media screen and (max-width: 568px) {
+                padding-top: 0px;
+                padding-bottom: 0;
+            }
+            img {
+                width: 150px;
+            }
+            p {
+                color: $white;
+            }
+        }
+        .second-column {
+            padding: 20px;
+            @media screen and (max-width: 568px) {
+                padding-top: 0px;
+                padding-bottom: 0;
+            }
+            h3 {
+                color: $primary;
+                margin-top: 0;
+            }
+            ul {
+                padding-left: 0;
+                margin-left: 0;
+                li {
+                    color: $lightwhite;
+                    list-style-type: none;
+                    padding-bottom: 12px;
+                    display: flex;
+                    &:hover {
+                        color: $white;
+                    }
+                    a {
+                        cursor: pointer;
+                        color: $lightwhite;
+                        text-decoration: none;
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                    i {
+                        color: $primary;
+                        padding-right: 10px;
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .text-xs-center {
+        @media screen and (max-width: 568px) {
+            text-align: center;
+        }
+    }
+    .text-right {
+        text-align: right;
+        @media screen and (max-width: 568px) {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            &:hover {
+                color: $primary !important;
+            }
+        }
+    }
+}

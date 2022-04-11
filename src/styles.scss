@@ -1,0 +1,123 @@
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+@import "./sass/variables";
+@import "./sass/colors";
+@import "./sass/font-size";
+@import "./sass/spacing";
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: rgb(95, 105, 125);
+}
+
+.custom-spacer {
+  /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.container-half {
+  max-width: 720px;
+  margin: 0px auto;
+  @media (max-width: 576px) {
+    padding: 10px;
+  }
+}
+
+
+.container {
+  max-width: 1320px;
+  margin: 0px auto;
+  @media (max-width: 576px) {
+    padding: 10px;
+  }
+
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+    max-width: 540px;
+    // padding: 10px;
+  }
+
+  /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.scroll-fixed {
+  position: fixed;
+  overflow: hidden;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #f4f7ff !important;
+}
+
+.success-message {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  border: 1px solid;
+  .mat-simple-snackbar-action {
+    color: #3c763d;
+    opacity: 0.5;
+  }
+}
+.error-message {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  border: 1px solid;
+  .mat-simple-snackbar-action {
+    color: #a94442;
+    opacity: 0.5;
+  }
+}
+
+.progress-loader {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+  .loader {
+    border: 6px solid #ffffff33;
+    border-top: 5px solid #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

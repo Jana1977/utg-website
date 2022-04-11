@@ -1,0 +1,238 @@
+<div class="progress-loader" *ngIf="loader">
+    <div class="loader"></div>
+</div>
+<section class="main-card">
+    <div class="container">
+        <div class="main-section">
+            <div class="main-title">Donate to U TURN GREEN to save our kids and future generations. </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-container">
+    <div class="container bg-white success" *ngIf="successMessage">
+        <div fxLayout="row wrap">
+            <div fxFlex="100">
+                <div class="title">Thank You!</div>
+                <img src="../../../assets/img/success.svg" alt="">
+                <p>Your donation has been successfully processed</p>
+                <div class="action-btn">
+                    <button mat-raised-button class="filled-green" type="submit" (click)="goBack()">
+                        Go Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-white" *ngIf="!successMessage">
+        <div fxLayout="row wrap">
+            <form fxLayout="row wrap" [formGroup]="donationForm">
+                <div class="header" fxFlex="100">
+                    <p>Every gift helps American Forests restore damaged wildland and urban forests — for people, for
+                        wildlife, for the planet. Give today and help us protect forests for tomorrow. A contribution of
+                        any
+                        amount can have a big impact.</p>
+                </div>
+
+                <div fxFlex="50">
+                    <div class="sub-title">AMOUNT</div>
+                    <mat-radio-group aria-label="Select an option" formControlName="selected_amount"
+                        (change)="otherAmountChange()">
+                        <mat-radio-button value="25">$25</mat-radio-button>
+                        <mat-radio-button value="50">$50</mat-radio-button>
+                        <mat-radio-button value="250">$250</mat-radio-button>
+                        <mat-radio-button value="500">$500</mat-radio-button>
+                        <mat-radio-button value="1000">$1000</mat-radio-button>
+                        <mat-radio-button value="00">Other</mat-radio-button>
+                        <!-- <mat-error>Please select amount</mat-error> -->
+                    </mat-radio-group>
+                </div>
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100" class="m-t-15"
+                    *ngIf="donationForm.get('selected_amount').value == '00'">
+                    <mat-label>Enter Custom Amount*</mat-label>
+                    <input matInput type="number" placeholder="Enter Custom Amount" formControlName="custom_amount">
+                    <mat-error *ngIf="donationForm.get('custom_amount').invalid">Please enter Enter Custom Amount
+                    </mat-error>
+                </mat-form-field>
+
+
+
+                <div fxFlex="100" class="sub-title m-b-10 m-t-20">DONOR INFORMATION</div>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>First Name*</mat-label>
+                    <input matInput placeholder="First Name" formControlName="first_name" autocomplete="off">
+                    <mat-error>Please enter valid first name</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Last Name*</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="last_name" autocomplete="off">
+                    <mat-error>Please enter valid last name</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Phone</mat-label>
+                    <input matInput placeholder="Phone" formControlName="phone" autocomplete="off"
+                        (keypress)="numberOnly($event)">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Email*</mat-label>
+                    <input matInput placeholder="Email" formControlName="email" autocomplete="off">
+                    <mat-error>Please enter valid email address</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput placeholder="Address Line 1" formControlName="donor_addr_line1" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput placeholder="Address Line 2" formControlName="donor_addr_line2" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="City" formControlName="donor_city" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>State</mat-label>
+                    <mat-select formControlName="donor_state">
+                        <mat-option *ngFor="let state of states" [value]="state.value"> {{state.text}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Zipcode</mat-label>
+                    <input matInput placeholder="Zipcode" formControlName="donor_zip_code" autocomplete="off"
+                        (keypress)="numberOnly($event)">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Province</mat-label>
+                    <input matInput placeholder="Province" formControlName="donor_province" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Country</mat-label>
+                    <mat-select formControlName="donor_country">
+                        <mat-option *ngFor="let country of countries" [value]="country.value"> {{country.text}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <div fxFlex="100" class="sub-title m-b-10 m-t-20">PAYMENT INFORMATION</div>
+
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Cardholder's name*</mat-label>
+                    <input matInput placeholder="Cardholder's name" formControlName="card_holder_name"
+                        autocomplete="off">
+                    <mat-error>Please enter valid Cardholder's name</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Credit Card Number*</mat-label>
+                    <input matInput placeholder="XXXXXXXXXXXXXXXX" formControlName="card_number" [minLength]="15"
+                        [maxLength]="16" autocomplete="off" (keypress)="numberOnly($event)">
+                    <mat-error>Please enter valid Credit Card Number</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Month*</mat-label>
+                    <!-- <input matInput placeholder="MM" formControlName="exp_month" [maxLength]="2" autocomplete="off"> -->
+                    <mat-select formControlName="exp_month">
+                        <mat-option *ngFor="let month of months" [value]="month.value">{{month.text}}</mat-option>
+                    </mat-select>
+                    <mat-error>Please enter valid Month</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Year*</mat-label>
+                    <input matInput placeholder="YYYY" formControlName="exp_year" [maxLength]="4" autocomplete="off">
+                    <mat-error>Please enter valid Year</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>CVC Number*</mat-label>
+                    <input matInput type="text" placeholder="CVC Number" formControlName="cvc" [minLength]="3"
+                        [maxLength]="4" autocomplete="off">
+                    <mat-error>Please enter valid CVC Number</mat-error>
+                </mat-form-field>
+
+
+
+
+                <div fxFlex="100" class="sub-title m-b-10 m-t-20">BILLING INFORMATION</div>
+
+                <div fxFlex="100" class="m-t-10 m-b-20">
+                    <mat-checkbox (change)="fillAutoAddress($event)">Same as Donor Address</mat-checkbox>
+                </div>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput placeholder="Address Line 1" formControlName="billing_addr_line1"
+                        autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="50" fxFlex.xs="100">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput placeholder="Address Line 2" formControlName="billing_addr_line2"
+                        autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="City" formControlName="billing_city" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>State</mat-label>
+                    <mat-select formControlName="billing_state">
+                        <mat-option *ngFor="let state of states" [value]="state.value"> {{state.text}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Zipcode</mat-label>
+                    <input matInput placeholder="Zipcode" formControlName="billing_zip_code" autocomplete="off"
+                        (keypress)="numberOnly($event)">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Province</mat-label>
+                    <input matInput placeholder="Province" formControlName="billing_province" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" fxFlex="33.3" fxFlex.xs="100">
+                    <mat-label>Country</mat-label>
+                    <mat-select formControlName="billing_country">
+                        <mat-option *ngFor="let country of countries" [value]="country.value"> {{country.text}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div class="action-btn" fxFlex="100">
+                    <button mat-raised-button class="filled-green" type="submit" (click)="onSubmit()">
+                        Donate Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<section class="call-to-action">
+    <div class="container">
+        <div fxLayout="row wrap">
+            <div fxFlex="80" fxFlex.xs="100" class="title">Join us today to fight climate change</div>
+            <div fxFlex="20" fxFlex.xs="100"> <button mat-raised-button class="filled-white float-right"
+                    routerLink="/contact-us">Contact Us</button></div>
+        </div>
+    </div>
+</section>
